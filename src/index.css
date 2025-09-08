@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-londrina: "Londrina Solid", cursive;
+}
+
+html,
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-poppins);
+}
+
+/* Hero background */
+.hero-bg {
+  @apply bg-no-repeat;
+  background-image: url('/src/assets/hero-road.png');
+  background-position: 76px center;
+  background-size: 95% 100%;
+}
+
+/* Responsive overrides */
+@media (max-width: 1024px) {
+  .hero-bg {
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    background-image: url('/src/assets/hero-road-mobile.png');
+    background-size: cover;
+  }
+}
